@@ -5,7 +5,7 @@ import moment from 'moment';
 import '../assets/styles/AddEvent.css';
 import { IoIosArrowBack } from 'react-icons/io';
 
-const AddEvent = ({ thisDay, setThisDay, selectedDate, setSelectedDate}) => {
+const AddEvent = ({ thisDay, setThisDay, selectedDate, setSelectedDate }) => {
   const [newHeader, setNewHeader] = useState('');
   const [newText, setNewText] = useState('');
   const [dayColor, setDayColor] = useState('black');
@@ -113,7 +113,7 @@ const AddEvent = ({ thisDay, setThisDay, selectedDate, setSelectedDate}) => {
 
     setNewHeader(e.target.value);
   };
- 
+
   return (
     <div className="AddEvent close">
       <div className="add_event-bg"></div>
@@ -131,7 +131,9 @@ const AddEvent = ({ thisDay, setThisDay, selectedDate, setSelectedDate}) => {
               document.querySelector('.blur').style.transform = 'scale(0)';
               document.querySelector('.RightBar').style.zIndex = 4;
               document.querySelector('.AddEvent').classList.add('close');
-              setThisDay(moment())
+              setThisDay(moment());
+              setNewHeader('');
+              setNewText('');
             }}
           >
             <IoIosArrowBack />Назад

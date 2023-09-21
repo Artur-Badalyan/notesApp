@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState(), action) => {
   switch (action.type) {
     case 'ADD-NEW-USER':
       return {
@@ -24,28 +24,30 @@ const reducer = (state = initialState, action) => {
       };
 
     case 'ADD-NEW-EVENT':
-      return {
-        ...state,
-        events: [
-          ...state.events,
-          {
-            id: Math.random(),
-            header: action.payload.header,
-            text: action.payload.text,
-            date: action.payload.date,
-            time: action.payload.time,
-            bgColor: action.payload.bgColor ? action.payload.bgColor : '#FF4EED'
-          }
-        ]
+      const newEvent = {
+        id: Math.random(),
+        header: action.payload.header,
+        text: action.payload.text,
+        date: action.payload.date,
+        time: action.payload.time,
+        bgColor: action.payload.bgColor ? action.payload.bgColor : '#FF4EED'
       };
+      const newState = { ...state, events: [...state.events, newEvent ] };
 
-      case 'DELETE-EVENT':
-      return {
+      localStorage.setItem('events', JSON.stringify(newState.events));
+
+      return newState;
+
+    case 'DELETE-EVENT':
+      const deleteNewState = {
         ...state,
         events: [
           ...state.events.filter((event) => event.id !== action.payload.id)
         ]
       };
+      localStorage.setItem('events', JSON.stringify(deleteNewState.events));
+
+      return deleteNewState;
 
     case 'EDIT-CURRENT-EVENT':
       const updatedEvents = state.events.map(event => {
@@ -61,8 +63,7 @@ const reducer = (state = initialState, action) => {
         }
         return event;
       });
-
-      
+      localStorage.setItem('events', JSON.stringify(updatedEvents));
 
       return {
         ...state,
@@ -74,7 +75,9 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const initialState = {
+const initialState = () => {
+
+  const state = {
     users: [
       {
         id: Math.random() * 100,
@@ -88,10 +91,16 @@ const initialState = {
         password: 'artur'
       }
     },
-    events: [
-      
-    ],
   };
+
+  localStorage.setItem('users', state.users);
+  localStorage.setItem('currentUser', state.currentUser.user);
+  const events =  localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
+
+  state.events = events;
+
+  return state;
+};
 
 const store = createStore(reducer);
 
