@@ -1,0 +1,202 @@
+.ViewNotes {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: all .2s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.ViewNotes.close {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.view_notes-bg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    background-color: rgba(28, 29, 31, .7);
+    backdrop-filter: blur(40px);
+}
+
+.ViewNotes .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1366px;
+    width: 80%;
+    height: 100vh;
+    z-index: 10;
+}
+
+.view_notes-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0  0 20px -25px;
+}
+
+.view_notes-top button {
+    width: 150px;
+    height: 35px;
+    background-color: #343434;
+    color: #C6C6C6;
+    margin-left: 12px;
+    transition: all .3s ease-out;
+}
+
+.view_notes-top button:hover {
+    background-color: #1C1D1F;
+    color: #fff;
+}
+
+.view_notes-top button.back {
+    background-color: #1C1D1F;
+    width: 100px;
+}
+
+.ViewNotes .wrapper {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.ViewNotes .wrapper .events {
+    display: flex;
+    flex-direction: row !important;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: auto;
+    max-height: 100%;
+
+}
+
+.ViewNotes .wrapper .event {
+    width: 48%;
+    height: 250px;
+    margin: 10px 10px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ViewNotes .header {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.ViewNotes .date {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.ViewNotes .text {
+    margin-top: 10px;
+}
+
+.ViewNotes .time,
+.ViewNotes .date {
+    text-align: right;
+}
+
+.showFullEvent {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.showFullEvent .view_event-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view_event-left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fullEvent-bg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(28, 29, 31, .7);
+    backdrop-filter: blur(40px);
+}
+
+.showFullEvent .container {
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+
+.showFullEvent .container * {
+    z-index: 10;
+    position: relative;
+}
+
+.showFullEvent .view_event-left {
+    display: flex;
+}
+
+.showFullEvent .view_event-bottom {
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.showFullEvent .view_event-bottom .view_event-left {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.showFullEvent .view_event-bottom .header {
+    margin-bottom: 20px;
+}
+
+.showFullEvent .view_event-bottom .date {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.showFullEvent .view_event-bottom .time {
+    font-size: 20px;
+}
+
+.text {
+}
+
+.view_event-bottom input {
+    width: 95%;
+}
+
+textarea {
+    color: #C6C6C6;
+    background-color: rgb(47 47 47 / 87%);
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 95%;
+    font-size: 16px;
+    height: 100%;
+}

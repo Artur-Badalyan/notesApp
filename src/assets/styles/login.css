@@ -1,0 +1,61 @@
+.signin,
+.registration {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+  }
+  
+  .signin form,
+  .registration form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signin button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 40px;
+    background-color: #343434;
+    margin-top: 10px;
+    color: #FFFFFF;
+    transition: all .2s ease-in-out;
+  }
+  
+  .signin button:hover {
+    background-color: #303030;
+  }
+  
+  .title {
+    font-size: 40px;
+    color: #FF8D4E;
+    margin-bottom: 30px;
+  }
+  
+  .createAccount {
+    color: #FF8D4E;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    transition: all .2s ease-in-out;
+  }
+  
+  .createAccount:hover {
+    color: #d0713f;
+  }
+  
+  .registration button {
+    width: 350px;
+    height: 40px;
+    background-color: #FF8D4E;
+    color: #fff;
+    margin-top: 10px;
+    transition: all .2s ease-in-out;
+  }
+
+  .registration button:hover {
+    background-color: #e17b45;
+  }

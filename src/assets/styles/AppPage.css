@@ -1,0 +1,40 @@
+.AppPage {
+    width: 100%;
+    color: #fff;
+}
+
+.top_bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top_bar-left,
+.top_bar-right {
+    display: flex;
+}
+
+.user_name {
+    width: 150px;
+    height: 35px;
+    background-color: #141415;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.top_bar button {
+    width: 150px;
+    height: 35px;
+    background-color: #343434;
+    color: #C6C6C6;
+    margin-left: 12px;
+    transition: all .3s ease-out;
+}
+
+.top_bar button:hover {
+    background-color: #272626;
+    color: #fff;
+}
