@@ -2,7 +2,7 @@
   "name": "notes-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://karen0185.github.io/notes-app",
+  "homepage": "https://github.com/Artur-Badalyan/notesApp.git",
   "dependencies": {
     "@ionic/react": "^7.1.1",
     "@testing-library/jest-dom": "^5.16.5",
